@@ -1,0 +1,159 @@
+@import "../../../node_modules/admin-lte/build/less/AdminLTE.less";
+
+@boxed-layout-bg-image-path: "../../dist/img/boxed-bg.jpg";
+
+@btn-font-weight: 300;
+@font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
+
+body, label, .checkbox label {
+    font-weight: 300;
+}
+
+.error-page {
+    background-color: @body-bg;
+}
+
+.btn-aligned-bottom {
+    font-size: 0;
+}
+
+.btn-aligned-bottom > * {
+    float: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn-aligned-bottom > *:last-child {
+    vertical-align: bottom;
+}
+
+.btn-aligned-bottom p:last-child {
+    margin-bottom: 0;
+}
+
+.m-r {
+    margin-right: 20px;
+}
+
+.m-t {
+    margin-top: 20px;
+}
+
+.b-r {
+    border-right: 1px solid #d0d0d0;
+}
+
+hr {
+    margin-top: 0px;
+    margin-bottom: 22px;
+    border: 0;
+    border-top: 1px solid #d0d0d0;
+}
+
+.logo-block {
+    padding: 5px;
+    margin: 15px auto 20px auto;
+    background: #fff;
+    border: 1px solid #e7eaec;
+    width: 150px;
+}
+
+.logo-block img {
+    width: 100%;
+}
+
+.datepicker{
+    &.datepicker-dropdown{
+        table{
+            th,
+            td{
+                color: #000000;
+                font-size: 12px;
+                &.day.new{
+                    color: #777;
+                }
+                &:hover{
+                    background: #eee;
+                }
+            }
+        }
+    }
+    .datepicker-switch,
+    .next,
+    .prev{
+        cursor: pointer;
+        &:hover{
+            background: rgba(0,0,0,0.2);
+        }
+    }
+    &.dropdown-menu > div {
+        display: block;
+    }
+    &.days div.datepicker-days {
+        display: block;
+    }
+    &.months div.datepicker-months {
+        display: block;
+    }
+    &.years div.datepicker-years {
+        display: block;
+    }
+}
+
+.breadcrumb {
+    padding-left: 0px;
+}
+
+.alert.alert-success {
+    display: none;
+}
+
+.alert.alert-error {
+    display: none;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #337ab7;
+    border-radius: 0;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+    &:active {
+        text-decoration: none;
+    }
+    &:focus {
+        text-decoration: none;
+        border: none;
+    }
+}
+
+dl {
+    margin-bottom:50px;
+}
+
+.dl-horizontal dt {
+    overflow: visible;
+}
+
+.dl-horizontal dd {
+    margin-left: 280px;
+}
+
+dl dt {
+    //background:#5f9be3;
+    //color:#fff;
+    overflow: visible;
+    float:left;
+    font-weight:bold;
+    margin-right:10px;
+    padding:5px;
+    width:100px;
+}
+
+dl dd {
+    margin:2px 0;
+    padding:5px 0;
+}
+
