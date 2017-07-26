@@ -22,6 +22,8 @@ require('icheck');
  */
 
 window.Vue = require('vue');
+import Buefy from 'buefy';
+vue.use(Buefy);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
