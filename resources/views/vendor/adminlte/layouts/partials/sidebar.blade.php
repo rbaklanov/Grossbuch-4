@@ -16,13 +16,13 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('adminlte_lang::message.online') }}</a>
                 </div>
             </div>
-        @endif
+    @endif
 
-        <!-- search form (Optional) -->
+    <!-- search form (Optional) -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="{{ trans('adminlte_lang::message.search') }}..."/>
-              <span class="input-group-btn">
+                <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
@@ -31,12 +31,15 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            {{--<li class="header">{{ trans('adminlte_lang::message.header') }}</li>--}}
-            <!-- Optionally, you can add icons to the links -->
+        {{--<li class="header">{{ trans('adminlte_lang::message.header') }}</li>--}}
+        <!-- Optionally, you can add icons to the links -->
             <li class="treeview">
                 <a href="#"><i class='fa fa-book'></i> <span>Отчеты</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
+                    @role('administrator|ceo|manager|user')
                     <li><a href="#"><i class='fa fa-calendar'></i><span>Ежедневные</span></a></li>
+                    @endrole()
+                    @role('administrator|ceo')
                     <li class="treeview">
                         <a href="#"><i class='fa fa-folder'></i> <span>Сводные</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
@@ -44,6 +47,8 @@
                             <li><a href="#">Эффективность <br> временных затрат</a></li>
                         </ul>
                     </li>
+                    @endrole()
+                    @role('administrator|ceo|manager|client')
                     <li class="treeview">
                         <a href="#"><i class='fa fa-address-book-o'></i> <span>Клиентские</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
@@ -51,6 +56,8 @@
                             <li><a href="#">Протоколы сдачи <br> отчетности</a></li>
                         </ul>
                     </li>
+                    @endrole()
+                    @role('administrator|ceo')
                     <li class="treeview">
                         <a href="#"><i class='fa fa-user-secret'></i> <span>Управленческие</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
@@ -58,10 +65,12 @@
                             <li><a href="#">Журнал учета <br> доходов-расходов</a></li>
                         </ul>
                     </li>
+                    @endrole()
                 </ul>
             </li>
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-envelope'></i> <span>Почта</span></a></li>
             <li><a href="#"><i class='fa fa-tasks'></i> <span>Задачи</span></a></li>
+            @role('administrator|ceo|manager|user')
             <li class="treeview">
                 <a href="#"><i class='fa fa-ruble'></i> <span>Финансы</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -69,16 +78,21 @@
                     <li><a href="#">Доходы/расходы</a></li>
                 </ul>
             </li>
+            @endrole()
+            @role('administrator|ceo|manager|user')
             <li><a href="#"><i class='fa fa-calendar-check-o'></i> <span>Календарь отчетности</span></a></li>
+            @endrole()
             <li class="treeview">
                 <a href="#"><i class='fa fa-gears'></i> <span>Настройки</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
+                    @role('administrator')
                     <li><a href={{ url('/users') }}>Пользователи</a></li>
                     <li><a href="#">Клиенты</a></li>
                     <li><a href="#">Роли</a></li>
                     <li><a href={{ url('/routines') }}>Типовые операции</a></li>
                     <li><a href={{ url('/departments') }}>Отделы</a></li>
                     <li><a href={{ url('/positions') }}>Должности</a></li>
+                    @endrole()
                     <li><a href="#">Личный кабинет</a></li>
                     <li><a href="#">О компании</a></li>
                 </ul>
